@@ -11,7 +11,7 @@
            <div class="row mt">
           		<div class="col-lg-12">
                   <div class="form-panel">
-                  	  <h1 class="mb"><i class="fa fa-angle-right font"></i> TAGIHIN</h1>
+                  	  <h1 class="mb"><i class="fa fa-angle-right font"></i> N</h1>
                         <span class="help-block fsize">Cara mudah mengirim tagihan</span>
                         
                       <form class="form-horizontal style-form" method="get">
@@ -22,14 +22,14 @@
                           <!-- =====PENGIRIM===== -->
                             <div class="form-group">
                                 <div class="inner-addon left-addon">
-                                    <i class="icon"> <img src="user.png" height="15" weight="15"></i>
+                                    <i class="icon"> <img src="url({{ URL::asset('icon/user.jpg') }})" height="15" weight="15"></i>
                                     <input type="text" class="form-control inp" placeholder="Nama Pengirim" />
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <div class="inner-addon left-addon">
-                                    <i class="icon"> <img src="../assets/phone.png" height="15" weight="15"></i>
+                                    <i class="icon"> <img src="phone.png" height="15" weight="15"></i>
                                     <input type="number" class="form-control inp" placeholder="Nomor Handphone Pengirim" />
                                 </div>
                             </div>
@@ -43,21 +43,21 @@
                           <!-- =====PENERIMA===== -->
                             <div class="form-group">
                                 <div class="inner-addon left-addon">
-                                    <i class="icon"> <img src="../assets/user.png" height="15" weight="15"></i>
+                                    <i class="icon"> <img src="user.png" height="15" weight="15"></i>
                                     <input type="text" class="form-control inp" placeholder="Nama Penerima" />
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <div class="inner-addon left-addon">
-                                    <i class="icon"> <img src="../assets/mail.png" height="15" weight="15"></i>
+                                    <i class="icon"> <img src="mail.png" height="15" weight="15"></i>
                                     <input type="email" class="form-control inp" placeholder="Email Penerima" />
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <div class="inner-addon left-addon">
-                                    <i class="icon"> <img src="../assets/phone.png" height="15" weight="15"></i>
+                                    <i class="icon"> <img src="phone.png" height="15" weight="15"></i>
                                     <input type="number" class="form-control inp" placeholder="Nomor Handphone Penerima" />
                                 </div>
                             </div>
@@ -69,14 +69,14 @@
                           <!-- =====TAGIHAN===== -->
                             <div class="form-group">
                                 <div class="inner-addon left-addon">
-                                    <i class="icon"> <img src="../assets/receipt.png" height="15" weight="15"></i>
+                                    <i class="icon"> <img src="receipt.png" height="15" weight="15"></i>
                                     <input type="number" class="form-control inp" placeholder="Jumlah" />
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <div class="inner-addon left-addon">
-                                    <i class="icon"> <img src="../assets/note.png" height="15" weight="15"></i>
+                                    <i class="icon"> <img src="note.png" height="15" weight="15"></i>
                                     <input type="text" class="form-control inp" placeholder="Catatan" />
                                 </div>
                             </div>
