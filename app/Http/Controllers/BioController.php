@@ -76,14 +76,14 @@ class BioController extends Controller
         echo "cURL Error #:" . $err;
         } else {
             $bios= json_decode($response, TRUE);;
+
             for($count = 0 ;$count <count($bios["rows"]); $count ++ ){
                 if(strtotime(date("Y/m/d"))-strtotime($bios["rows"][$count]["value"][8])>0){
                     $stats="failed";
-                    $variable=strtotime(date("Y/m/d"))-strtotime($bios["rows"][$count]["value"][8]);
                 }
             }
             if($stats=="failed"){
-                return redirect('')->with('success', 'Failed to add! Number have an overdue bills!');    
+                return redirect('bios')->with('success', 'Failed to add! Number have an overdue bills!');    
             }else if($stats=="good"){ 
                 $curl = curl_init();
                 $namaPenerima = $request->get('namaPenerima');

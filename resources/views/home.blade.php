@@ -22,11 +22,7 @@
                           <!-- =====PENGIRIM===== -->
                             <div class="form-group">
                                 <div class="inner-addon left-addon">
-<<<<<<< HEAD
                                     <i class="icon"> <img src="images/user.png" height="15" weight="15"></i>
-=======
-                                    <i class="icon"> <img src="url({{ URL::asset('icon/user.jpg') }})" height="15" weight="15"></i>
->>>>>>> 615085ebd710f9d68dd6cb6ef42c7500cf4ee878
                                     <input type="text" class="form-control inp" placeholder="Nama Pengirim" />
                                 </div>
                             </div>
