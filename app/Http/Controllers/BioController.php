@@ -12,7 +12,7 @@ class BioController extends Controller
         $curl = curl_init();
         curl_setopt_array($curl, array(
         CURLOPT_PORT => "5984",
-        CURLOPT_URL => "http://127.0.0.1:5984/tagihin/_design/jumlahTagihan/_view/new-view",
+        CURLOPT_URL => "http://tanggon:tanggon@localhost:5984/dbuser/_design/jumlahTagihan/_view/new-view",
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => "",
         CURLOPT_MAXREDIRS => 10,
@@ -57,7 +57,7 @@ if ($err) {
             $tgl = date("Y/m/d");
             curl_setopt_array($curl, array(
             CURLOPT_PORT => "5984",
-            CURLOPT_URL => "http://bayuharisaputro:bayu0707@127.0.0.1:5984/tagihin/",
+            CURLOPT_URL => "http://tanggon:tanggon@localhost:5984/dbuser/",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
