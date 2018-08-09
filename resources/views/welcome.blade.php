@@ -14,7 +14,7 @@
         <!-- Styles -->
     </head>
     <body>
-        <div class="container-fluid">
+        <div class="container-fluid baru">
             <div class="col-lg-4 col-centered"></div>
             <div class="col-lg-4 col-centered">
                 <div class="row mt">
@@ -68,7 +68,7 @@
                                 <div class="form-group">
                                     <div class="inner-addon left-addon">
                                         <i class="icon"> <img src="icon/phone.png" height="15" weight="15"></i>
-                                        <input type="number" class="form-control inp" placeholder="Nomor Handphone Penerima" name="hpPenerima"/>
+                                        <input type="number" class="form-control inp" placeholder="Nomor Handphone Penerima" name="hpPenerima" required/>
                                     </div>
                                 </div>
                             <!-- =========== -->

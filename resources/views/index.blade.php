@@ -18,8 +18,8 @@
       <tr>
         <th>ID</th>
         <th>Nama Penerima</th>
-        <th>Email Penerima</th>
         <th>Nomor Hp Penerima</th>
+        <th>Email Penerima</th>
         <th>Nama Penagih</th>
         <th>Nomor Hp Penagih</th>
         <th>Jumlah Tagihan</th>
@@ -27,14 +27,20 @@
         <th>Tanggal</th>
       </tr>
     </thead>
-   
+    <?php 
+//    print_r($bios["rows"]);
+//    echo ($bios["rows"][$count]["value"][$counter]);
+// echo date('Y-m-d',1533885240-strtotime($bios["rows"][$count]["value"][8]))
+// echo 1533945600-strtotime($bios["rows"][$count]["value"][8])
+// 
+    ?>
     <tbody>
       
       <?php 
       for($count = 0 ;$count <count($bios["rows"]); $count ++ ){
       echo "<tr>";
       for($counter = 0 ;$counter <count($bios["rows"][0]["value"]);$counter++ ) { ?>
-        <td><?php echo ($bios["rows"][$count]["value"][$counter]); ?></td>
+        <td><?php  ?></td>
       <?php }
         echo "</tr>";
     } ?>
