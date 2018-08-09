@@ -30,7 +30,7 @@
     <tbody>
       
       <?php 
-    for($count = 0 ;$count <count($bios["rows"]); $count ++ ){
+      for($count = 0 ;$count <count($bios["rows"]); $count ++ ){
       echo "<tr>";
       for($counter = 0 ;$counter <count($bios["rows"][0]["value"]);$counter++ ) { ?>
       
