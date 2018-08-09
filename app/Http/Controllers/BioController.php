@@ -9,10 +9,15 @@ class BioController extends Controller
 
     public function index()
     {
+        $hp = $_GET['hp'];
         $curl = curl_init();
         curl_setopt_array($curl, array(
         CURLOPT_PORT => "5984",
+<<<<<<< HEAD
         CURLOPT_URL => "http://tanggon:tanggon@localhost:5984/dbuser/_design/jumlahTagihan/_view/new-view",
+=======
+        CURLOPT_URL => 'http://127.0.0.1:5984/tagihin/_design/jumlahTagihan/_view/new-view?key=["'.$hp.'"]',
+>>>>>>> 7d1f1373930071218c67bd6313a73f9f4aaf9eef
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => "",
         CURLOPT_MAXREDIRS => 10,
