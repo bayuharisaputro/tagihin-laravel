@@ -1,6 +1,3 @@
-@extends('layouts.app')
-
-@section('content')
 <template>
     <div class="container-fluid top">
         <div class="col-lg-4 col-centered"></div>
@@ -22,7 +19,7 @@
                           <!-- =====PENGIRIM===== -->
                             <div class="form-group">
                                 <div class="inner-addon left-addon">
-                                    <i class="icon"> <img src="images/user.png" height="15" weight="15"></i>
+                                    <i class="icon"> <img src="../assets/user.png" height="15" weight="15"></i>
                                     <input type="text" class="form-control inp" placeholder="Nama Pengirim" />
                                 </div>
                             </div>
@@ -81,7 +78,7 @@
                                 </div>
                             </div>
                           <!-- =========== -->
-                          
+                          <br><br>
                       </form>
                   </div>
           		</div><!-- col-lg-12-->      	
@@ -162,5 +159,4 @@
        
     }
     
-</style> 
-@endsection
+</style>
