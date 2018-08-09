@@ -9,72 +9,22 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">  
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
         <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
     </head>
     <body>
         <div class="container-fluid">
             <div class="col-lg-4 col-centered"></div>
             <div class="col-lg-4 col-centered">
                 <div class="row mt">
-                    <div class="col-lg-12">
+                    <div class="col-lg-12 ">
                     <div class="form-panel">
                         <h1 class="mb"><i class="fa fa-angle-right font"></i> TAGIHIN</h1>
                             <span class="help-block fsize">Cara mudah mengirim tagihan</span>
                             
-                        <form class="form-horizontal style-form" method="get">
+                        <form class="form-horizontal style-form" method="post"  action="{{url('bios')}}" enctype="multipart/form-data">
+                        @csrf
                                 <div>
                                     <p class="box1">Pengirim</p>           
                                 </div>
@@ -82,15 +32,15 @@
                             <!-- =====PENGIRIM===== -->
                                 <div class="form-group">
                                     <div class="inner-addon left-addon">
-                                        <i class="icon"> <img src="../assets/user.png" height="15" weight="15"></i>
-                                        <input type="text" class="form-control inp" placeholder="Nama Pengirim" />
+                                        <i class="icon"> <img src="icon/user.png" height="15" weight="15"></i>
+                                        <input type="text" class="form-control inp" placeholder="Nama Pengirim" name="namaPenagih" required/>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <div class="inner-addon left-addon">
-                                        <i class="icon"> <img src="../assets/phone.png" height="15" weight="15"></i>
-                                        <input type="number" class="form-control inp" placeholder="Nomor Handphone Pengirim" />
+                                        <i class="icon"> <img src="icon/phone.png" height="15" weight="15"></i>
+                                        <input type="number" class="form-control inp" placeholder="Nomor Handphone Pengirim" name="hpPenagih" required/>
                                     </div>
                                 </div>
                             <!-- =========== -->
@@ -103,22 +53,22 @@
                             <!-- =====PENERIMA===== -->
                                 <div class="form-group">
                                     <div class="inner-addon left-addon">
-                                        <i class="icon"> <img src="../assets/user.png" height="15" weight="15"></i>
-                                        <input type="text" class="form-control inp" placeholder="Nama Penerima" />
+                                        <i class="icon"> <img src="icon/user.png" height="15" weight="15"></i>
+                                        <input type="text" class="form-control inp" placeholder="Nama Penerima" name="namaPenerima" required/>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <div class="inner-addon left-addon">
-                                        <i class="icon"> <img src="../assets/mail.png" height="15" weight="15"></i>
-                                        <input type="email" class="form-control inp" placeholder="Email Penerima" />
+                                        <i class="icon"> <img src="icon/mail.png" height="15" weight="15"></i>
+                                        <input type="email" class="form-control inp" placeholder="Email Penerima"  name="emailPenerima" required/>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <div class="inner-addon left-addon">
-                                        <i class="icon"> <img src="../assets/phone.png" height="15" weight="15"></i>
-                                        <input type="number" class="form-control inp" placeholder="Nomor Handphone Penerima" />
+                                        <i class="icon"> <img src="icon/phone.png" height="15" weight="15"></i>
+                                        <input type="number" class="form-control inp" placeholder="Nomor Handphone Penerima" name="hpPenerima"/>
                                     </div>
                                 </div>
                             <!-- =========== -->
@@ -129,26 +79,26 @@
                             <!-- =====TAGIHAN===== -->
                                 <div class="form-group">
                                     <div class="inner-addon left-addon">
-                                        <i class="icon"> <img src="../assets/receipt.png" height="15" weight="15"></i>
-                                        <input type="number" class="form-control inp" placeholder="Jumlah" />
+                                        <i class="icon"> <img src="icon/receipt.png" height="15" weight="15"></i>
+                                        <input type="number" class="form-control inp" placeholder="Jumlah" name="tagihan" required/>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <div class="inner-addon left-addon">
-                                        <i class="icon"> <img src="../assets/note.png" height="15" weight="15"></i>
-                                        <input type="text" class="form-control inp" placeholder="Catatan" />
+                                        <i class="icon"> <img src="icon/note.png" height="15" weight="15"></i>
+                                        <input type="text" class="form-control inp" placeholder="Catatan" name="catatan" required/>
                                     </div>
                                 </div>
                             <!-- =========== -->
-                            
+                            <button type="submit" class="btn btn-primary btn-block button1">Tagih</button>
+               
                         </form>
                     </div>
                     </div><!-- col-lg-12-->      	
                 </div><!-- /row -->
 
-                <button type="button" class="btn btn-primary btn-block button1">Tagih</button>
-                    
+                     
             </div>
             <div class="col-lg-4 col-centered"></div>
         </div>

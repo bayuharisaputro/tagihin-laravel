@@ -3,19 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+$nohp;
 class BioController extends Controller
 {
-
+    
     public function index()
     {
         $hp = $_GET['hp'];
         $curl = curl_init();
         curl_setopt_array($curl, array(
         CURLOPT_PORT => "5984",
-
-        CURLOPT_URL => 'http://127.0.0.1:5984/tagihin/_design/jumlahTagihan/_view/new-view?key=["'.$hp.'"]',
-
+        CURLOPT_URL => 'http://tanggon:tanggon@localhost:5984/dbuser/_design/jumlahTagihan/_view/new-view?key=["'.$hp.'"]',
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => "",
         CURLOPT_MAXREDIRS => 10,
@@ -52,6 +50,7 @@ if ($err) {
         $curl = curl_init();
             $namaPenerima = $request->get('namaPenerima');
             $hpPenerima = $request->get('hpPenerima');
+            $this->$nohp= $hpPenerima;
             $emailPenerima =$request->get('emailPenerima');
             $namaPenagih = $request->get('namaPenagih');
             $hpPenagih = $request->get('hpPenagih');
