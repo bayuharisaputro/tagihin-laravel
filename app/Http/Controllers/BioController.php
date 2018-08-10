@@ -9,11 +9,14 @@ class BioController extends Controller
     public function index()
     {
         //$hp = $_GET['hp'];
-        $hp="081359868716";
+        //$hpPenagih="123123";
+
         $curl = curl_init();
         curl_setopt_array($curl, array(
         CURLOPT_PORT => "5984",
-        CURLOPT_URL => 'http://127.0.0.1:5984/tagihin/_design/view1/_view/new-view',
+        CURLOPT_URL => 'http://tanggon:tanggon@localhost:5984/dbuser/_design/jumlahTagihan/_view/new-view',
+        //CURLOPT_URL => 'http://tanggon:tanggon@localhost:5984/dbuser/_design/jumlahTagihan/_view/new-view?key=["'.$hpPenagih.'"]',
+       
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => "",
         CURLOPT_MAXREDIRS => 10,
@@ -46,13 +49,14 @@ class BioController extends Controller
     }
     public function store(Request $request)
     {
+        date_default_timezone_set("Asia/Jakarta");
         $stats="good";
         $hpPenagih = $request->get('hpPenagih');
-        $hpPenagih = '081359868716';        
+        //$hpPenagih = '081359868716';        
         $curl = curl_init();
         curl_setopt_array($curl, array(
         CURLOPT_PORT => "5984",
-        CURLOPT_URL => 'http://bayuharisaputro:bayu0707@localhost:5984/tagihin/_design/view1/_view/new-view?key=["'.$hpPenagih.'"]',
+        CURLOPT_URL => 'http://tanggon:tanggon@localhost:5984/dbuser/_design/jumlahTagihan/_view/new-view?key=["'.$hpPenagih.'"]',
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => "",
         CURLOPT_MAXREDIRS => 10,
@@ -71,6 +75,15 @@ class BioController extends Controller
         echo "cURL Error #:" . $err;
         } else {
             $bios= json_decode($response, TRUE);;
+            
+            for($count = 0 ;$count <count($bios["rows"]); $count ++){
+                if(strtotime(date('Y-m-d H:i:s'))-strtotime($bios["rows"][$count]["value"][8])>86400){
+                    $stats=="failed";
+                    return redirect('bios')->with('success', 'Failed to add! Number have an overdue bills!');    
+                }
+
+            }
+                  
             if($stats=="failed"){
                 return redirect('bios')->with('success', 'Failed to add! Number have an overdue bills!');    
             }else if($stats=="good"){ 
@@ -81,10 +94,10 @@ class BioController extends Controller
                 $namaPenagih = $request->get('namaPenagih');
                 $cat = $request->get('catatan');
                 $tagihan = $request->get('tagihan');
-                $tgl = date("Y/m/d");
+                $tgl = date("Y-m-d H:i:s");
                 curl_setopt_array($curl, array(
                 CURLOPT_PORT => "5984",
-                CURLOPT_URL => "http://bayuharisaputro:bayu0707@localhost:5984/tagihin/",
+                CURLOPT_URL => "http://tanggon:tanggon@localhost:5984/dbuser/",
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
                 CURLOPT_MAXREDIRS => 10,
