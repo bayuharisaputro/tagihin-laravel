@@ -14,13 +14,9 @@ class BioController extends Controller
         $curl = curl_init();
         curl_setopt_array($curl, array(
         CURLOPT_PORT => "5984",
-<<<<<<< HEAD
         CURLOPT_URL => 'http://tanggon:tanggon@localhost:5984/dbuser/_design/jumlahTagihan/_view/new-view',
         //CURLOPT_URL => 'http://tanggon:tanggon@localhost:5984/dbuser/_design/jumlahTagihan/_view/new-view?key=["'.$hpPenagih.'"]',
        
-=======
-        CURLOPT_URL => 'http://127.0.0.1:5984/tagihin/_design/view1/_view/new-view',
->>>>>>> d5677786463f979d85bd253b13385893f3c0e955
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => "",
         CURLOPT_MAXREDIRS => 10,
@@ -60,11 +56,7 @@ class BioController extends Controller
         $curl = curl_init();
         curl_setopt_array($curl, array(
         CURLOPT_PORT => "5984",
-<<<<<<< HEAD
         CURLOPT_URL => 'http://tanggon:tanggon@localhost:5984/dbuser/_design/jumlahTagihan/_view/new-view?key=["'.$hpPenagih.'"]',
-=======
-        CURLOPT_URL => 'http://bayuharisaputro:bayu0707@localhost:5984/tagihin/_design/view1/_view/new-view?key=["'.$hpPenagih.'"]',
->>>>>>> d5677786463f979d85bd253b13385893f3c0e955
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => "",
         CURLOPT_MAXREDIRS => 10,
