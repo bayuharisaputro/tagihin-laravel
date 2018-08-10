@@ -13,7 +13,7 @@ class BioController extends Controller
         $curl = curl_init();
         curl_setopt_array($curl, array(
         CURLOPT_PORT => "5984",
-        CURLOPT_URL => 'http://tanggon:tanggon@localhost:5984/dbuser/_design/jumlahTagihan/_view/new-view',
+        CURLOPT_URL => 'http://bayuharisaputro:bayu0707@localhost:5984/tagihin/_design/jumlahTagihan/_view/new-view',
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => "",
         CURLOPT_MAXREDIRS => 10,
@@ -48,13 +48,11 @@ class BioController extends Controller
     {
         $stats="good";
         $hpPenagih = $request->get('hpPenagih');
-        //$hpPenagih = '081359868716';        
-        
-
+        $hpPenagih = '081359868716';        
         $curl = curl_init();
         curl_setopt_array($curl, array(
         CURLOPT_PORT => "5984",
-        CURLOPT_URL => 'http://tanggon:tanggon@localhost:5984/dbuser/_design/jumlahTagihan/_view/new-view?key=["'.$hpPenagih.'"]',
+        CURLOPT_URL => 'http://bayuharisaputro:bayu0707@localhost:5984/tagihin/_design/jumlahTagihan/_view/new-view?key=["'.$hpPenagih.'"]',
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => "",
         CURLOPT_MAXREDIRS => 10,
@@ -66,22 +64,13 @@ class BioController extends Controller
         "content-type: application/json"
         ),
         ));
-
         $response = curl_exec($curl);
         $err = curl_error($curl);
-
         curl_close($curl);
-
         if ($err) {
         echo "cURL Error #:" . $err;
         } else {
             $bios= json_decode($response, TRUE);;
-
-            for($count = 0 ;$count <count($bios["rows"]); $count ++ ){
-                if(strtotime(date("Y/m/d"))-strtotime($bios["rows"][$count]["value"][8])>0){
-                    $stats="failed";
-                }
-            }
             if($stats=="failed"){
                 return redirect('bios')->with('success', 'Failed to add! Number have an overdue bills!');    
             }else if($stats=="good"){ 
@@ -95,7 +84,7 @@ class BioController extends Controller
                 $tgl = date("Y/m/d");
                 curl_setopt_array($curl, array(
                 CURLOPT_PORT => "5984",
-                CURLOPT_URL => "http://tanggon:tanggon@localhost:5984/dbuser/",
+                CURLOPT_URL => "http://bayuharisaputro:bayu0707@localhost:5984/tagihin/",
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
                 CURLOPT_MAXREDIRS => 10,
@@ -113,6 +102,8 @@ class BioController extends Controller
                 if ($err) {
                 echo "cURL Error #:" . $err;
                 } else {
+
+                    
                 return redirect('bios')->with('success', 'Information has been added');
                 }             
             }

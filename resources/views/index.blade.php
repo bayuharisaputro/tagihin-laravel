@@ -24,12 +24,12 @@
         <th>Nomor Hp Penagih</th>
         <th>Jumlah Tagihan</th>
         <th>Catatan</th>
-        <th>Tanggal</th>
+        <th>Tanggal2324</th>
       </tr>
     </thead>
     <?php 
-//    print_r($bios["rows"]);
-//    echo ($bios["rows"][$count]["value"][$counter]);
+   // print_r($bios["rows"]);
+ //   echo ($bios["rows"][$count]["value"][$counter]);
 // echo date('Y-m-d',1533885240-strtotime($bios["rows"][$count]["value"][8]))
 // echo 1533945600-strtotime($bios["rows"][$count]["value"][8])
 // 
@@ -40,7 +40,9 @@
       for($count = 0 ;$count <count($bios["rows"]); $count ++ ){
       echo "<tr>";
       for($counter = 0 ;$counter <count($bios["rows"][0]["value"]);$counter++ ) { ?>
-        <td><?php  ?></td>
+        <td><?php 
+    echo ($bios["rows"][$count]["value"][$counter]);
+    ?></td>
       <?php }
         echo "</tr>";
     } ?>
