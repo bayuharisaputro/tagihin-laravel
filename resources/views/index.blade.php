@@ -27,6 +27,7 @@
         <th>Tanggal</th>
       </tr>
     </thead>
+<<<<<<< HEAD
     <?php 
     
    // print_r($bios["rows"]);
@@ -34,6 +35,9 @@
 // echo date('Y-m-d',1533885240-strtotime($bios["rows"][$count]["value"][8]))
 // echo 1533945600-strtotime($bios["rows"][$count]["value"][8])
 //    strtotime(date('Y-m-d H:i:s'))-strtotime($bios["rows"][$count]["value"][8]);
+=======
+    <?php
+>>>>>>> d5677786463f979d85bd253b13385893f3c0e955
     ?>
     <tbody>
       

@@ -14,9 +14,13 @@ class BioController extends Controller
         $curl = curl_init();
         curl_setopt_array($curl, array(
         CURLOPT_PORT => "5984",
+<<<<<<< HEAD
         CURLOPT_URL => 'http://tanggon:tanggon@localhost:5984/dbuser/_design/jumlahTagihan/_view/new-view',
         //CURLOPT_URL => 'http://tanggon:tanggon@localhost:5984/dbuser/_design/jumlahTagihan/_view/new-view?key=["'.$hpPenagih.'"]',
        
+=======
+        CURLOPT_URL => 'http://127.0.0.1:5984/tagihin/_design/view1/_view/new-view',
+>>>>>>> d5677786463f979d85bd253b13385893f3c0e955
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => "",
         CURLOPT_MAXREDIRS => 10,
@@ -56,7 +60,11 @@ class BioController extends Controller
         $curl = curl_init();
         curl_setopt_array($curl, array(
         CURLOPT_PORT => "5984",
+<<<<<<< HEAD
         CURLOPT_URL => 'http://tanggon:tanggon@localhost:5984/dbuser/_design/jumlahTagihan/_view/new-view?key=["'.$hpPenagih.'"]',
+=======
+        CURLOPT_URL => 'http://bayuharisaputro:bayu0707@localhost:5984/tagihin/_design/view1/_view/new-view?key=["'.$hpPenagih.'"]',
+>>>>>>> d5677786463f979d85bd253b13385893f3c0e955
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => "",
         CURLOPT_MAXREDIRS => 10,
@@ -115,8 +123,30 @@ class BioController extends Controller
                 if ($err) {
                 echo "cURL Error #:" . $err;
                 } else {
-
+                    $curl = curl_init();
+                    curl_setopt_array($curl, array(
+                      CURLOPT_URL => "http:///206.189.80.98:8081/apiv1/digiroin/sms",
+                      CURLOPT_RETURNTRANSFER => true,
+                      CURLOPT_ENCODING => "",
+                      CURLOPT_MAXREDIRS => 10,
+                      CURLOPT_TIMEOUT => 30,
+                      CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                      CURLOPT_CUSTOMREQUEST => "POST",
+                      CURLOPT_POSTFIELDS => "{\n    \"phone\":\"$hpPenerima\",\n    \"message\":\"jumlah : $tagihan ($cat)\"\n}",
+                      CURLOPT_HTTPHEADER => array(
+                        "apikey: q1jsewrjzizV7wmXCB3GxIRdI8ILL749",
+                        "content-type: application/json"
+                      ),
+                    ));
+                    $response = curl_exec($curl);
+                    $err = curl_error($curl);
+                    curl_close($curl);
                     
+                    if ($err) {
+                      echo "cURL Error #:" . $err;
+                    } else {
+                      echo $response;
+                    }  
                 return redirect('bios')->with('success', 'Information has been added');
                 }             
             }
