@@ -51,15 +51,8 @@
         <?php
         }
         echo "</tr>";
-<<<<<<< HEAD
-    } ?>
-        
-
-      
-=======
       }
       ?>
->>>>>>> fcccec3b63aaa883b690ee9dce1411dff9c87ae9
     </tbody>
   </table>
   </div>

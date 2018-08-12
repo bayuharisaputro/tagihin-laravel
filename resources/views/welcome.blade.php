@@ -76,7 +76,7 @@
                                 <div>
                                     <p class="box1">Tagihan</p>           
                                 </div>
-                            <!-- =====TAGIHAN===== -->
+                           <!-- =====TAGIHAN===== -->
                                 <div class="form-group">
                                     <div class="inner-addon left-addon">
                                         <i class="icon"> <img src="icon/receipt.png" height="15" weight="15"></i>
