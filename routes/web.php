@@ -61,7 +61,6 @@ Route::get('/check/{hp}', function ($hp) {
     ));
     $response = curl_exec($curl);
     $err = curl_error($curl);
-
     curl_close($curl);
 
     if ($err) {
@@ -75,7 +74,7 @@ Route::get('/user', function () {
     $curl = curl_init();
         curl_setopt_array($curl, array(
         CURLOPT_PORT => "5984",
-        CURLOPT_URL => 'http://127.0.0.1:5984/tagihin/_design/view1/_view/new-view?key=["81293812938"]',
+        CURLOPT_URL => 'http://127.0.0.1:5984/tagihin/_design/view1/_view/new-view?key="81293812938"',
         //CURLOPT_URL => 'http://tanggon:tanggon@localhost:5984/dbuser/_design/jumlahTagihan/_view/new-view?key="'.p;-.liio9.'"',
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => "",
